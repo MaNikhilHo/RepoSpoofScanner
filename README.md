@@ -1,8 +1,5 @@
 # RepoSpoofScanner 🔍🛡️
 
-[![CI](https://github.com/manikhilho/RepoSpoofScanner/actions/workflows/ci.yml/badge.svg)](https://github.com/manikhilho/RepoSpoofScanner/actions)
-[![PyPI](https://img.shields.io/pypi/v/repospoofscanner)](https://pypi.org/project/repospoofscanner/)
-
 A security scanner that detects malicious package dependencies in GitHub repositories through:
 - **Typosquatting detection** (Levenshtein distance)
 - **Registry validation** (npm/PyPI)

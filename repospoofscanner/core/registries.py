@@ -11,8 +11,7 @@ class RegistryValidator:
 
     async def validate(self, package: str, registry: str) -> bool:
         url = self.REGISTRY_ENDPOINTS[registry].format(package)
-        resp = await self.client.get(url)
-        return resp.status_code == 200
+        return (await self.client.get(url)).status_code == 200
 
     async def search_similar(self, package: str, registry: str) -> list[str]:
         if registry == "npm":
@@ -21,5 +20,4 @@ class RegistryValidator:
                 params={"text": package}
             )
             return [p["package"]["name"] for p in resp.json().get("objects", [])]
-        # Task for future me. Add PyPI/RubyGems later
         return []
